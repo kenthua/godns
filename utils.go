@@ -32,7 +32,7 @@ const (
 	// PanicMax is the max allowed panic times
 	PanicMax = 5
 	// INTERVAL is minute
-	INTERVAL = 5
+	INTERVAL = 120
 	// DNSPOD for dnspod.cn
 	DNSPOD = "DNSPod"
 	// HE for he.net
