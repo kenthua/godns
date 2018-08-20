@@ -2,6 +2,9 @@ language: go
 go: 
  - 1.10.x
 
+services:
+ - docker
+
 install:
  - go get -v
  - go get -v github.com/bitly/go-simplejson
@@ -10,3 +13,12 @@ install:
 script:
  - cp ./config_sample.json ./config.json
  - go test -v ./...
+ - cp godns cmd/godns
+ - cd cmd/godns
+ - docker build -t kenthua/godns:latest .
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: alpine
