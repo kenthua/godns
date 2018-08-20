@@ -13,10 +13,8 @@ install:
 script:
  - cp ./config_sample.json ./config.json
  - go test -v ./...
- - go build ./...
- - go build
- - ls -latR
  - cd cmd/godns
+ - go build
  - ls -latR
  - docker build -t kenthua/godns:latest .
 
