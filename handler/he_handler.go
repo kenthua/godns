@@ -71,7 +71,7 @@ func (handler *HEHandler) UpdateIP(domain, subDomain, currentIP string) {
 	values := url.Values{}
 	values.Add("hostname", fmt.Sprintf("%s.%s", subDomain, domain))
 //	values.Add("password", handler.Configuration.Password)
-	values.Add("password", os.Getenv("HE_PASSWORD")
+	values.Add("password", os.Getenv("HE_PASSWORD"))
 	values.Add("myip", currentIP)
 
 	client := &http.Client{}
